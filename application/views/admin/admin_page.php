@@ -51,7 +51,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 
 
+<div class="cape0">
+  <h2>Performa</h2>
+<div class="cape">
+  <div class="cape1">
+    <div class="dot1">
+    <h2 class="dot">25</h2>
+    </div>
+    <h3>Jumlah Siswa</h3>
+  </div>
+  <div class="cape2">
+    <div class="dot1">
+    <h2 class="dot">25</h2>
+    </div>
+    <h3>Jumlah Petugas</h3>
+  </div>
+  <div class="cape3">
+    <div class="dot1">
+    <h2 class="dot">25</h2>
+    </div>
+    <h3>Jumlah Kelas</h3>
+  </div>
+</div>
+</div>
 
+<div class="alv">
+    <div class="dot2">
+    <h2 class="dot3" style="font-size: 150">124</h2>
+    </div>
+  <h1 style="font-size: 50px">Total Tagihan<br>2020/2021</h1>
+</div>
+
+
+  
 
 
 
