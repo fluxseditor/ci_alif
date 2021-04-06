@@ -62,22 +62,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <th>Level </th>
         <th>Edit </th>
      </tr>
-     <tr>
-        <td>1</td>
-        <td>Dadang Subur</td>
-        <td>dewakipas</td>
-        <td>apaanatuh</td>
-        <td>Admin</td>
-        <td>Edit | Delete</td>
-     </tr>
-     <tr>
-        <td>2</td>
-        <td>Welly Summon</td>
-        <td>cabra</td>
-        <td>kopiasem</td>
-        <td>Petugas</td>
-        <td>Edit | Delete</td>
-     </tr>
+     <?php 
+          $no = 1;
+          foreach($petugas as $row)
+          {
+            ?>
+            <tr>
+              <td widtd="5%"><?php echo $no++; ?></td>
+              <td><?php echo $row->nama_petugas; ?></td>
+              <td><?php echo $row->username; ?></td>
+              <td><?php echo $row->password; ?></td>
+              <td><?php echo $row->level; ?></td>
+              <td>
+              <?php echo anchor('Welcome/edit/'.$row->id,'Edit'); ?> |
+              <?php echo anchor('Welcome/hapus_petugas/'.$row->id,'Delete'); ?> 
+              </td>
+            </tr>
+            <?php
+          }
+          ?>
    </table>
  </div>
 

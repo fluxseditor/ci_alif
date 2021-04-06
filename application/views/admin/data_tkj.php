@@ -92,24 +92,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <th>Telp </th>
         <th>Edit </th>
      </tr>
-     <tr>
-        <td>1</td>
-        <td>Udin Baplang</td>
-        <td>045485252</td>
-        <td>0045412748</td>
-        <td>Jl.Babakan Sari ,Antapani ,Kickcon ,Bandung</td>
-        <td>08955454545</td>
-        <td>Edit | Delete</td>
-     </tr>
-     <tr>
-        <td>2</td>
-        <td>Epul Kontolodon</td>
-        <td>0545022155</td>
-        <td>005651274</td>
-        <td>Dayeuh ,bojongsoang ,soreang, Kabupaten Bandung</td>
-        <td>084122457451</td>
-        <td>Edit | Delete</td>
-     </tr>
+     <?php 
+          $no = 1;
+          foreach($siswa as $row)
+          {
+            ?>
+            <tr>
+              <td widtd="5%"><?php echo $no++; ?></td>
+              <td><?php echo $row->nama; ?></td>
+              <td><?php echo $row->nisn; ?></td>
+              <td><?php echo $row->nis; ?></td>
+              <td><?php echo $row->alamat; ?></td>
+              <td><?php echo $row->telp; ?></td>
+              <td>
+              <?php echo anchor('Welcome/edit/'.$row->id,'Edit'); ?> |
+              <?php echo anchor('Welcome/hapus/'.$row->id,'Delete'); ?> 
+              </td>
+            </tr>
+            <?php
+          }
+          ?>
    </table>
  </div>
 
