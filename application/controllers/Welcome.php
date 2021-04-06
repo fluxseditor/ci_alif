@@ -56,6 +56,7 @@ class Welcome extends CI_Controller {
 	}
 
 	function update(){
+	$id = $this->input->post('id');
 	$nama = $this->input->post('nama');
 	$kelas = $this->input->post('kelas');
 	$nisn = $this->input->post('nisn');
