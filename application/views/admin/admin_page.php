@@ -12,25 +12,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">Petugas</a>
+  <a href="<?php echo base_url(); ?>index.php/Welcome/beranda">Beranda</a>
+  <a href="<?php echo base_url(); ?>index.php/Welcome/viewpetugas">Petugas</a>
   <ul class="main-navigation">
   <li><a href="#">Kelas &darr;</a>
     <ul>
-      <li><a href="#">RPL &#8702;</a>
+      <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewrpl">RPL &#8702;</a>
         <ul>
           <li><a href="#">XII</a></li>
           <li><a href="#">XI</a></li>
           <li><a href="#">X</a></li>
         </ul>
       </li>
-      <li><a href="#">AP &#8702;</a>
+      <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewrpl">AP &#8702;</a>
         <ul>
           <li><a href="#">XII</a></li>
           <li><a href="#">XI</a></li>
           <li><a href="#">X</a></li>
         </ul>
       </li>
-      <li><a href="#">TKJ &#8702;</a>
+      <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewrpl">TKJ &#8702;</a>
         <ul>
           <li><a href="#">XII</a></li>
           <li><a href="#">XI</a></li>

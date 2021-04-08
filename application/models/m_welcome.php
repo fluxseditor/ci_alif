@@ -30,6 +30,16 @@ class m_welcome extends CI_Model
 	function update_data($where,$data,$table){
 		$this->db->where($where);
 		$this->db->update($table,$data);
-	}	
+	}
+
+	function showrpl(){
+	return $this->db->get($this->table)->result();
+	}
+	function showap(){
+	return $this->db->get($this->table)->result();
+	}
+	function showtkj(){
+	return $this->db->get($this->table)->result();
+	}
  
 }

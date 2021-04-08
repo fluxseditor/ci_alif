@@ -12,25 +12,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">Petugas</a>
+  <a href="<?php echo base_url(); ?>index.php/Welcome/beranda">Beranda</a>
+  <a href="<?php echo base_url(); ?>index.php/Welcome/viewpetugas">Petugas</a>
   <ul class="main-navigation">
   <li><a href="#">Kelas &darr;</a>
     <ul>
-      <li><a href="#">RPL &#8702;</a>
+      <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewrpl">RPL &#8702;</a>
         <ul>
           <li><a href="#">XII</a></li>
           <li><a href="#">XI</a></li>
           <li><a href="#">X</a></li>
         </ul>
       </li>
-      <li><a href="#">AP &#8702;</a>
+      <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewap">AP &#8702;</a>
         <ul>
           <li><a href="#">XII</a></li>
           <li><a href="#">XI</a></li>
           <li><a href="#">X</a></li>
         </ul>
       </li>
-      <li><a href="#">TKJ &#8702;</a>
+      <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewtkj">TKJ &#8702;</a>
         <ul>
           <li><a href="#">XII</a></li>
           <li><a href="#">XI</a></li>
@@ -53,21 +54,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <ul class="main-navigation">
   <li><a href="#">Kelas &darr;</a>
     <ul>
-      <li><a href="#">RPL &#8702;</a>
+      <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewrpl">RPL &#8702;</a>
         <ul>
           <li><a href="#">XII</a></li>
           <li><a href="#">XI</a></li>
           <li><a href="#">X</a></li>
         </ul>
       </li>
-      <li><a href="#">AP &#8702;</a>
+      <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewap">AP &#8702;</a>
         <ul>
           <li><a href="#">XII</a></li>
           <li><a href="#">XI</a></li>
           <li><a href="#">X</a></li>
         </ul>
       </li>
-      <li><a href="#">TKJ &#8702;</a>
+      <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewtkj">TKJ &#8702;</a>
         <ul>
           <li><a href="#">XII</a></li>
           <li><a href="#">XI</a></li>
@@ -81,7 +82,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 <div class="jambut">
-  <h1 style="padding-left: 170px">Data Siswa Administrasi Perkantoran (AP) SMK BPI</h1>
+  <h1 style="padding-left: 200px">Data Siswa Administrasi Perkantoran (AP) SMK BPI</h1>
   <button id="myBtn" class="btn-primary" style="float:right; right:30px; position: absolute">Tambah Siswa</button>
 <table style="width:100%" class="jambut">
       <tr>
@@ -107,7 +108,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <td><?php echo $row->telp; ?></td>
               <td>
               <?php echo anchor('Welcome/edit/'.$row->id,'Edit'); ?> | 
-              <?php echo anchor('Welcome/hapus/'.$row->id,'Delete'); ?> 
+              <?php echo anchor('Welcome/hapus1/'.$row->id,'Delete'); ?> 
               </td>
             </tr>
             <?php
@@ -127,15 +128,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <h3>Tambah Siswa</h3> 
       </div><br>
       
-      <form method="post" action="<?php echo base_url(); ?>index.php/Welcome/tambah_aksi">
+      <form method="post" action="<?php echo base_url(); ?>index.php/Welcome/tambah_aksi1">
         Nama :<br>
         <input type="text" name="nama" style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
         Kelas :<br>
-        <select id="cars" name="kelas" style="border-radius : 5px 5px 5px 5px ; width: 530px">
-          <option value="RPL" disable>RPL</option>
-          <option value="AP">AP</option>
-          <option value="TKJ" disabled>TKJ</option>
-        </select><br><br>
+		<select id="car" name="kelas" style="border-radius : 5px 5px 5px 5px ; width: 100px">
+          <option value="XII">XII</option>
+          <option value="XI">XI</option>
+          <option value="X">X</option>
+        </select>
+        <select id="cars" name="jurusan" style="border-radius : 5px 5px 5px 5px ; width: 425px">
+          <option value="RPL"disabled>RPL (Rekayasa Perangkat Lunak)</option>
+          <option value="AP">AP (Administrasi Perkantoran)</option>
+          <option value="TKJ" disabled>TKJ (Teknik Komputer dan Jaringan)</option>
+        </select>
+		<br><br>
         Nisn :<br>
         <input type="text" name="nisn" style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
         Nis :<br>

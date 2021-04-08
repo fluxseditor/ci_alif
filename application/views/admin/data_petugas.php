@@ -16,21 +16,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <ul class="main-navigation">
   <li><a href="#">Kelas &darr;</a>
     <ul>
-      <li><a href="#">RPL &#8702;</a>
+      <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewrpl">RPL &#8702;</a>
         <ul>
           <li><a href="#">XII</a></li>
           <li><a href="#">XI</a></li>
           <li><a href="#">X</a></li>
         </ul>
       </li>
-      <li><a href="#">AP &#8702;</a>
+      <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewap">AP &#8702;</a>
         <ul>
           <li><a href="#">XII</a></li>
           <li><a href="#">XI</a></li>
           <li><a href="#">X</a></li>
         </ul>
       </li>
-      <li><a href="#">TKJ &#8702;</a>
+      <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewtkj">TKJ &#8702;</a>
         <ul>
           <li><a href="#">XII</a></li>
           <li><a href="#">XI</a></li>
@@ -53,6 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div class="jambut">
   <h1 style="padding-left: 470px">Data Petugas SMK BPI</h1>
+  <button id="myBtn" class="btn-primary" style="float:right; right:60px; position: absolute">Tambah Petugas</button>
 <table style="width:100%" class="jambut">
       <tr>
         <th>No. </th>
@@ -84,7 +85,69 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    </table>
  </div>
 
+ 
+ 
+ 
+ <div id="myModal" class="modal">
 
+  <!-- Modal content -->
+  <div class="modal-content" style="width:42%">
+      <span class="close" style="color:black ;padding-left: 15px">&times;</span>
+    <div class="modal-body">
+      <div class="modal-header">
+      <h3>Tambah Petugas</h3> 
+      </div><br>
+      
+      <form method="post" action="<?php echo base_url(); ?>index.php/Welcome/tambah_petugas">
+        Nama Petugas:<br>
+        <input type="text" name="nama_petugas" style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
+        Username :<br>
+        <input type="text" name="username" style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
+        Password :<br>
+        <input type="password" name="password" style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
+        Level :<br>
+		<select id="car" name="level" style="border-radius : 5px 5px 5px 5px ; width: 530px">
+          <option value="admin">Admin</option>
+          <option value="petugas">Petugas</option>
+        </select><br><br>
+        <div class="modal-footer">
+        <center><button type="submit" class="btn-primary" value="Tambah">Submit</button></center> 
+        </div>
+        
+      </form>
+
+    </div>
+  </div>
+
+</div>
+ 
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 
 
 <script>

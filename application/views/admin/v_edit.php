@@ -16,11 +16,17 @@
         <input type="hidden" name="id" value="<?php echo $u->id ?>">
         <input type="text" name="nama" style="border-radius : 5px 5px 5px 5px ; width: 530px" value="<?php echo $u->nama ?>"><br><br>
         Kelas :<br>
-        <select id="cars" name="kelas" style="border-radius : 5px 5px 5px 5px ; width: 530px" value="<?php echo $u->kelas ?>">
-          <option value="RPL">RPL</option>
-          <option value="AP">AP</option>
-          <option value="TKJ">TKJ</option>
-        </select><br><br>
+        <select id="car" name="kelas" style="border-radius : 5px 5px 5px 5px ; width: 100px">
+          <option value="XII">XII</option>
+          <option value="XI">XI</option>
+          <option value="X">X</option>
+        </select>
+        <select id="cars" name="jurusan" style="border-radius : 5px 5px 5px 5px ; width: 424px">
+          <option value="RPL">RPL (Rekayasa Perangkat Lunak)</option>
+          <option value="AP">AP (Administrasi Perkantoran)</option>
+          <option value="TKJ">TKJ (Teknik Komputer dan Jaringan)</option>
+        </select>
+		<br><br>
         Nisn :<br>
         <input type="text" name="nisn" style="border-radius : 5px 5px 5px 5px ; width: 530px" value="<?php echo $u->nisn ?>"><br><br>
         Nis :<br>
