@@ -12,39 +12,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="<?php echo base_url(); ?>index.php/Welcome/beranda">Beranda</a>
+  <a href="<?php echo base_url(); ?>index.php/Welcome/index">Beranda</a>
   <a href="<?php echo base_url(); ?>index.php/Welcome/viewpetugas">Petugas</a>
   <ul class="main-navigation">
-  <li><a href="#">Kelas &darr;</a>
+   <li><a href="#">Kelas &darr;</a>
     <ul>
       <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewrpl">RPL &#8702;</a>
         <ul>
-          <li><a href="#">XII</a></li>
-          <li><a href="#">XI</a></li>
-          <li><a href="#">X</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewXii1">XII</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewXi1"">XI</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewX1"">X</a></li>
         </ul>
       </li>
       <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewap">AP &#8702;</a>
         <ul>
-          <li><a href="#">XII</a></li>
-          <li><a href="#">XI</a></li>
-          <li><a href="#">X</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewXii2"">XII</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewXi2"">XI</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewX2"">X</a></li>
         </ul>
       </li>
       <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewtkj">TKJ &#8702;</a>
         <ul>
-          <li><a href="#">XII</a></li>
-          <li><a href="#">XI</a></li>
-          <li><a href="#">X</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewXii3"">XII</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewXi3"">XI</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewX3"">X</a></li>
         </ul>
       </li>
     </ul>
   </li>
 </ul >&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-  <a href="#">Cek Spp</a>
-  <a href="#">Pembayaran</a>
-  <a href="#">History</a>
-  <a href="#">Laporan</a>
+  <a href="<?php echo base_url(); ?>index.php/Welcome/viewpetugas">Cek SPP</a>
+  <a href="<?php echo base_url(); ?>index.php/Welcome/viewpetugas">Pembayaran</a>
+  <a href="<?php echo base_url(); ?>index.php/Welcome/viewpetugas">History</a>
+  <a href="<?php echo base_url(); ?>index.php/Welcome/viewpetugas">Laporan</a>
 </div>
 
 <div class="pala">
@@ -52,27 +52,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 
 <ul class="main-navigation">
-  <li><a href="#">Kelas &darr;</a>
+   <li><a href="#">Kelas &darr;</a>
     <ul>
       <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewrpl">RPL &#8702;</a>
         <ul>
-          <li><a href="#">XII</a></li>
-          <li><a href="#">XI</a></li>
-          <li><a href="#">X</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewXii1">XII</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewXi1"">XI</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewX1"">X</a></li>
         </ul>
       </li>
       <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewap">AP &#8702;</a>
         <ul>
-          <li><a href="#">XII</a></li>
-          <li><a href="#">XI</a></li>
-          <li><a href="#">X</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewXii2"">XII</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewXi2"">XI</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewX2"">X</a></li>
         </ul>
       </li>
       <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewtkj">TKJ &#8702;</a>
         <ul>
-          <li><a href="#">XII</a></li>
-          <li><a href="#">XI</a></li>
-          <li><a href="#">X</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewXii3"">XII</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewXi3"">XI</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewX3"">X</a></li>
         </ul>
       </li>
     </ul>
@@ -88,6 +88,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <tr>
         <th>No. </th>
         <th>Nama </th>
+        <th>Email </th>
         <th>Nisn </th>
         <th>Nis </th>
         <th>Alamat </th>
@@ -102,6 +103,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <tr>
               <td widtd="5%"><?php echo $no++; ?></td>
               <td><?php echo $row->nama; ?></td>
+              <td><?php echo $row->email; ?></td>
               <td><?php echo $row->nisn; ?></td>
               <td><?php echo $row->nis; ?></td>
               <td><?php echo $row->alamat; ?></td>
@@ -131,6 +133,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <form method="post" action="<?php echo base_url(); ?>index.php/Welcome/tambah_aksi2">
         Nama :<br>
         <input type="text" name="nama" style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
+        Email :<br>
+        <input type="text" name="email" style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
+        Password :<br>
+        <input type="password" name="password" style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
         Kelas :<br>
 		<select id="car" name="kelas" style="border-radius : 5px 5px 5px 5px ; width: 100px">
           <option value="XII">XII</option>

@@ -40,10 +40,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </ul>
   </li>
 </ul >&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-  <a href="#">Cek Spp</a>
-  <a href="#">Pembayaran</a>
-  <a href="#">History</a>
-  <a href="#">Laporan</a>
+  <a href="<?php echo base_url(); ?>index.php/Welcome/viewpetugas">Cek SPP</a>
+  <a href="<?php echo base_url(); ?>index.php/Welcome/viewpetugas">Pembayaran</a>
+  <a href="<?php echo base_url(); ?>index.php/Welcome/viewpetugas">History</a>
+  <a href="<?php echo base_url(); ?>index.php/Welcome/viewpetugas">Laporan</a>
 </div>
 
 <div class="pala">

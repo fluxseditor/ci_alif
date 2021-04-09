@@ -15,6 +15,10 @@
         Nama :<br>
         <input type="hidden" name="id" value="<?php echo $u->id ?>">
         <input type="text" name="nama" style="border-radius : 5px 5px 5px 5px ; width: 530px" value="<?php echo $u->nama ?>"><br><br>
+        Email :<br>
+        <input type="text" name="email" style="border-radius : 5px 5px 5px 5px ; width: 530px" value="<?php echo $u->email ?>"><br><br>
+        Password :<br>
+        <input type="password" name="password" style="border-radius : 5px 5px 5px 5px ; width: 530px" value="<?php echo $u->password ?>"><br><br>
         Kelas :<br>
         <select id="car" name="kelas" style="border-radius : 5px 5px 5px 5px ; width: 100px">
           <option value="XII">XII</option>

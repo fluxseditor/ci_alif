@@ -13,12 +13,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <button class="open-button" onclick="openForm()">Login Disini</button>
 
 <div class="form-popup" id="myForm">
- <form class="form-container" action="<?php echo site_url('Welcome/ceklogin');?>" method="post">
+ <form class="form-signin" action="<?php echo base_url().'index.php/login'?>" method="post">
     
     <h1>Login</h1>
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="username" required>
+    <input type="text" placeholder="Enter Email" name="email" required>
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" required>

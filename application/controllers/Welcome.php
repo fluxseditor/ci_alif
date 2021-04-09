@@ -8,13 +8,13 @@ class Welcome extends CI_Controller {
         parent::__construct();
         $this->load->model("m_welcome");
         $this->load->model("m_welcome1");
-        $this->load->model("m_welcome2");
+        $this->load->model('Spp');
         $this->load->library('form_validation');
     }
  
 	public function index()
 	{
-		$data['siswa'] = $this->m_welcome->getAll();
+		$data['graph'] = $this->Spp->graph();
 		$this->load->view('admin/admin_page',$data);
 	}
 
@@ -44,6 +44,8 @@ class Welcome extends CI_Controller {
 
 	function tambah_aksi(){
 		$nama = $this->input->post('nama');
+		$email = $this->input->post('email');
+		$password = $this->input->post('password');
 		$kelas = $this->input->post('kelas');
 		$jurusan = $this->input->post('jurusan');
 		$nisn = $this->input->post('nisn');
@@ -53,12 +55,15 @@ class Welcome extends CI_Controller {
  
 		$data = array(
 			'nama' => $nama,
+			'email' => $email,
+			'password' => $password,
 			'kelas' => $kelas,
 			'jurusan' => $jurusan,
 			'nisn' => $nisn,
 			'nis' => $nis,
 			'alamat' => $alamat,
-			'telp' => $telp
+			'telp' => $telp,
+			'level' => "siswa"
 			);
 		$this->m_welcome->input_data($data,'siswa');
 		redirect(base_url('index.php/Welcome/viewrpl'));
@@ -66,6 +71,8 @@ class Welcome extends CI_Controller {
 	
 	function tambah_aksi1(){
 		$nama = $this->input->post('nama');
+		$email = $this->input->post('email');
+		$password = $this->input->post('password');
 		$kelas = $this->input->post('kelas');
 		$jurusan = $this->input->post('jurusan');
 		$nisn = $this->input->post('nisn');
@@ -75,12 +82,15 @@ class Welcome extends CI_Controller {
  
 		$data = array(
 			'nama' => $nama,
+			'email' => $email,
+			'password' => $password,
 			'kelas' => $kelas,
 			'jurusan' => $jurusan,
 			'nisn' => $nisn,
 			'nis' => $nis,
 			'alamat' => $alamat,
-			'telp' => $telp
+			'telp' => $telp,
+			'level' => "siswa"
 			);
 		$this->m_welcome->input_data($data,'siswa');
 		redirect(base_url('index.php/Welcome/viewap'));
@@ -88,6 +98,8 @@ class Welcome extends CI_Controller {
 	
 	function tambah_aksi2(){
 		$nama = $this->input->post('nama');
+		$email = $this->input->post('email');
+		$password = $this->input->post('password');
 		$kelas = $this->input->post('kelas');
 		$jurusan = $this->input->post('jurusan');
 		$nisn = $this->input->post('nisn');
@@ -97,12 +109,15 @@ class Welcome extends CI_Controller {
  
 		$data = array(
 			'nama' => $nama,
+			'email' => $email,
+			'password' => $password,
 			'kelas' => $kelas,
 			'jurusan' => $jurusan,
 			'nisn' => $nisn,
 			'nis' => $nis,
 			'alamat' => $alamat,
-			'telp' => $telp
+			'telp' => $telp,
+			'level' => "siswa"
 			);
 		$this->m_welcome->input_data($data,'siswa');
 		redirect(base_url('index.php/Welcome/viewtkj'));
@@ -130,9 +145,17 @@ class Welcome extends CI_Controller {
 		$this->load->view('admin/v_edit',$data);
 	}
 
+	function edit_petugas($id){
+		$where = array('id' => $id);
+		$data['petugas'] = $this->m_welcome1->edit_data($where,'petugas')->result();
+		$this->load->view('admin/v_editpetugas',$data);
+	}
+
 	function update(){
 	$id = $this->input->post('id');
 	$nama = $this->input->post('nama');
+	$email = $this->input->post('email');
+	$password = $this->input->post('password');
 	$kelas = $this->input->post('kelas');
 	$jurusan = $this->input->post('jurusan');
 	$nisn = $this->input->post('nisn');
@@ -142,6 +165,8 @@ class Welcome extends CI_Controller {
  
 	$data = array(
 		'nama' => $nama,
+		'email' => $email,
+		'password' => $password,
 		'kelas' => $kelas,
 		'jurusan' => $jurusan,
 		'nisn' => $nisn,
@@ -157,12 +182,29 @@ class Welcome extends CI_Controller {
 	$this->m_welcome->update_data($where,$data,'siswa');
 	redirect('welcome/index');
 	}
-	
-	public function beranda()
-	{
-		$this->load->view('admin/admin_page');
+
+	function update_petugas(){
+	$id = $this->input->post('id');
+	$nama_petugas = $this->input->post('nama_petugas');
+	$email = $this->input->post('email');
+	$password = $this->input->post('password');
+	$level = $this->input->post('level');
  
+	$data = array(
+		'nama_petugas' => $nama_petugas,
+		'email' => $email,
+		'password' => $password,
+		'level' => $level
+	);
+ 
+	$where = array(
+		'id' => $id
+	);
+ 
+	$this->m_welcome1->update_data($where,$data,'petugas');
+	redirect('welcome/viewpetugas');
 	}
+	
 	
 	public function viewpetugas()
 	{
@@ -173,21 +215,87 @@ class Welcome extends CI_Controller {
 	
 	public function viewrpl()
 	{
-		$data['siswa'] = $this->m_welcome->showrpl();
+		$data['siswa'] = $this->m_welcome->getAllRpl();
 		$this->load->view('admin/data_rpl',$data);
  
 	}
 	
 	public function viewap()
 	{
-		$data['siswa'] = $this->m_welcome->showap();
+		$data['siswa'] = $this->m_welcome->getAllAp();
 		$this->load->view('admin/data_ap',$data);
  
 	}
 	public function viewtkj()
 	{
-		$data['siswa'] = $this->m_welcome->showtkj();
+		$data['siswa'] = $this->m_welcome->getAllTkj();
 		$this->load->view('admin/data_tkj',$data);
+ 
+	}
+
+
+	public function viewXii1()
+	{
+		$data['siswa'] = $this->m_welcome->getAllXiiRpl();
+		$this->load->view('admin/data_rpl',$data);
+ 
+	}
+	public function viewXi1()
+	{
+		$data['siswa'] = $this->m_welcome->getAllXiRpl();
+		$this->load->view('admin/data_rpl',$data);
+ 
+	}
+	public function viewX1()
+	{
+		$data['siswa'] = $this->m_welcome->getAllXRpl();
+		$this->load->view('admin/data_rpl',$data);
+ 
+	}
+
+	public function viewXii2()
+	{
+		$data['siswa'] = $this->m_welcome->getAllXiiAp();
+		$this->load->view('admin/data_ap',$data);
+ 
+	}
+	public function viewXi2()
+	{
+		$data['siswa'] = $this->m_welcome->getAllXiAp();
+		$this->load->view('admin/data_ap',$data);
+ 
+	}
+	public function viewX2()
+	{
+		$data['siswa'] = $this->m_welcome->getAllXAp();
+		$this->load->view('admin/data_ap',$data);
+ 
+	}
+
+	public function viewXii3()
+	{
+		$data['siswa'] = $this->m_welcome->getAllXiiTkj();
+		$this->load->view('admin/data_tkj',$data);
+ 
+	}
+	public function viewXi3()
+	{
+		$data['siswa'] = $this->m_welcome->getAllXiTkj();
+		$this->load->view('admin/data_tkj',$data);
+ 
+	}
+	public function viewX3()
+	{
+		$data['siswa'] = $this->m_welcome->getAllXTkj();
+		$this->load->view('admin/data_tkj',$data);
+ 
+	}
+
+
+	public function viewpembayaranl()
+	{
+		$data['siswa'] = $this->m_welcome->showrpl();
+		$this->load->view('admin/data_rpl',$data);
  
 	}
 }

@@ -32,14 +32,58 @@ class m_welcome extends CI_Model
 		$this->db->update($table,$data);
 	}
 
-	function showrpl(){
-	return $this->db->get($this->table)->result();
+	function getAllRpl(){
+	$query = $this->db->get_where('siswa', array('jurusan' => 'RPL'));
+	return $query->result();
 	}
-	function showap(){
-	return $this->db->get($this->table)->result();
+	function getAllXiiRpl(){
+	$query = $this->db->get_where('siswa', array('kelas' => 'XII', 'jurusan' => 'RPL'));
+	return $query->result();
 	}
-	function showtkj(){
-	return $this->db->get($this->table)->result();
+	function getAllXiRpl(){
+	$query = $this->db->get_where('siswa', array('kelas' => 'XI', 'jurusan' => 'RPL'));
+	return $query->result();
 	}
+	function getAllXRpl(){
+	$query = $this->db->get_where('siswa', array('kelas' => 'X', 'jurusan' => 'RPL'));
+	return $query->result();
+	}
+
+
+	function getAllAp(){
+	$query = $this->db->get_where('siswa', array('jurusan' => 'AP'));
+	return $query->result();
+	}
+	function getAllXiiAp(){
+	$query = $this->db->get_where('siswa', array('kelas' => 'XII', 'jurusan' => 'AP'));
+	return $query->result();
+	}
+	function getAllXiAp(){
+	$query = $this->db->get_where('siswa', array('kelas' => 'XI', 'jurusan' => 'AP'));
+	return $query->result();
+	}
+	function getAllXAp(){
+	$query = $this->db->get_where('siswa', array('kelas' => 'X', 'jurusan' => 'AP'));
+	return $query->result();
+	}
+
+
+	function getAllTkj(){
+	$query = $this->db->get_where('siswa', array('jurusan' => 'TKJ'));
+	return $query->result();
+	}
+	function getAllXiiTkj(){
+	$query = $this->db->get_where('siswa', array('kelas' => 'XII', 'jurusan' => 'TKJ'));
+	return $query->result();
+	}
+	function getAllXiTkj(){
+	$query = $this->db->get_where('siswa', array('kelas' => 'XI', 'jurusan' => 'TKJ'));
+	return $query->result();
+	}
+	function getAllXTkj(){
+	$query = $this->db->get_where('siswa', array('kelas' => 'X', 'jurusan' => 'TKJ'));
+	return $query->result();
+	}
+
  
 }
