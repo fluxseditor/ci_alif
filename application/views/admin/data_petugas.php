@@ -101,11 +101,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       
       <form method="post" action="<?php echo base_url(); ?>index.php/Welcome/tambah_petugas">
         Nama Petugas:<br>
-        <input type="text" name="nama_petugas" style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
+        <input type="text" name="nama_petugas" required style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
         Email :<br>
-        <input type="text" name="email" style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
+        <input type="text" name="email" required style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
         Password :<br>
-        <input type="password" name="password" style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
+        <input type="password" name="password" required style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
         Level :<br>
 		<select id="car" name="level" style="border-radius : 5px 5px 5px 5px ; width: 530px">
           <option value="admin">Admin</option>

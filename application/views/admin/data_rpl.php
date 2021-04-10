@@ -132,11 +132,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       
       <form method="post" action="<?php echo base_url(); ?>index.php/Welcome/tambah_aksi">
         Nama :<br>
-        <input type="text" name="nama" style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
+        <input type="text" name="nama" required style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
         Email :<br>
-        <input type="text" name="email" style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
+        <input type="text" name="email" required style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
         Password :<br>
-        <input type="password" name="password" style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
+        <input type="password" name="password" required style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
         Kelas :<br>
 		<select id="car" name="kelas" style="border-radius : 5px 5px 5px 5px ; width: 100px">
           <option value="XII">XII</option>
@@ -150,13 +150,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </select>
 		<br><br>
         Nisn :<br>
-        <input type="text" name="nisn" style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
+        <input type="text" name="nisn" required style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
         Nis :<br>
-        <input type="text" name="nis" style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
+        <input type="text" name="nis" required style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
         Alamat :<br>
         <textarea style="border-radius : 5px 5px 5px 5px ; width: 530px; height: 100px;" name="alamat"></textarea><br><br>
         No Telp :<br>
-        <input type="text" name="telp" style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
+        <input type="text" name="telp" required style="border-radius : 5px 5px 5px 5px ; width: 530px"><br><br>
         <div class="modal-footer">
         <center><button type="submit" class="btn-primary" value="Tambah">Submit</button></center> 
         </div>

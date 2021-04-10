@@ -73,6 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 </div>
 
+<form method="post" action="<?php echo base_url(); ?>index.php/Welcome/bayar">
 <div class="kanan">
 	<div class="kanan1">
 		<b><p style="font-size: 20px ;padding-top: 5px">Tagihan Spp</b></p>
@@ -135,7 +136,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    		<button class="btn-primary" name="proses">BAYAR</button>
    </div>
 </div>
-
+</form>
 
 <script>
 function openNav() {

@@ -8,6 +8,7 @@ class Welcome extends CI_Controller {
         parent::__construct();
         $this->load->model("m_welcome");
         $this->load->model("m_welcome1");
+		$this->load->model("m_welcome2");
         $this->load->model('Spp');
         $this->load->library('form_validation');
     }
@@ -137,6 +138,23 @@ class Welcome extends CI_Controller {
 			);
 		$this->m_welcome1->input_data($data,'petugas');
 		redirect(base_url('index.php/Welcome/viewpetugas'));
+	}
+	
+	function tambah_pembayaran(){
+		$nama = $this->input->post('nama');
+		$kelas = $this->input->post('kelas');
+		$nisn = $this->input->post('nisn');
+		$nominal = $this->input->post('nominal');
+	
+ 
+		$data = array(
+			'nama' => $nama,
+			'kelas' => $kelas,
+			'nisn' => $nisn,
+			'nominal' => $nominal
+			);
+		$this->m_welcome2->input_data($data,'pembayaran');
+		redirect(base_url('index.php/Welcome/viewSpp'));
 	}
 
 	function edit($id){
@@ -295,13 +313,21 @@ class Welcome extends CI_Controller {
 	{
 	$this->load->view('admin/history_pembayaran');
 	}
+	
 	public function viewpembayaran()
 	{
 	$this->load->view('admin/data_pembayaran');
 	}
+	
 	public function viewSpp()
 	{
 	$this->load->view('publik/tampilan_petugas');
+	}
+	
+	public function bayar()
+	{
+	$data['pembayaran'] = $this->m_welcome2->getAll();
+	$this->load->view('admin/data_pembayaran');
 	}
 }
 ?>
