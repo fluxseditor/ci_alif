@@ -290,13 +290,18 @@ class Welcome extends CI_Controller {
 		$this->load->view('admin/data_tkj',$data);
  
 	}
-
-
-	public function viewpembayaranl()
+	
+	public function viewhistory()
 	{
-		$data['siswa'] = $this->m_welcome->showrpl();
-		$this->load->view('admin/data_rpl',$data);
- 
+	$this->load->view('admin/history_pembayaran');
+	}
+	public function viewpembayaran()
+	{
+	$this->load->view('admin/data_pembayaran');
+	}
+	public function viewSpp()
+	{
+	$this->load->view('publik/tampilan_petugas');
 	}
 }
 ?>

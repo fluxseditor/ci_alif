@@ -16,33 +16,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <ul class="main-navigation">
   <li><a href="#">Kelas &darr;</a>
     <ul>
-      <li><a href="#">RPL &#8702;</a>
+      <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewrpl">RPL &#8702;</a>
         <ul>
-          <li><a href="#">XII</a></li>
-          <li><a href="#">XI</a></li>
-          <li><a href="#">X</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewXii1">XII</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewXi1">XI</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewX1">X</a></li>
         </ul>
       </li>
-      <li><a href="#">AP &#8702;</a>
+      <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewap">AP &#8702;</a>
         <ul>
-          <li><a href="#">XII</a></li>
-          <li><a href="#">XI</a></li>
-          <li><a href="#">X</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewXii2">XII</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewXi2">XI</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewX2">X</a></li>
         </ul>
       </li>
-      <li><a href="#">TKJ &#8702;</a>
+      <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewtkj">TKJ &#8702;</a>
         <ul>
-          <li><a href="#">XII</a></li>
-          <li><a href="#">XI</a></li>
-          <li><a href="#">X</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewXii3">XII</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewXi3">XI</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/Welcome/viewX3">X</a></li>
         </ul>
       </li>
     </ul>
   </li>
 </ul >&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-  <a href="<?php echo base_url(); ?>index.php/Welcome/viewpetugas">Cek SPP</a>
-  <a href="<?php echo base_url(); ?>index.php/Welcome/viewpetugas">Pembayaran</a>
-  <a href="<?php echo base_url(); ?>index.php/Welcome/viewpetugas">History</a>
+  <a href="<?php echo base_url(); ?>index.php/Welcome/viewspp">Cek SPP</a>
+  <a href="<?php echo base_url(); ?>index.php/Welcome/viewpembayaran">Pembayaran</a>
+  <a href="<?php echo base_url(); ?>index.php/Welcome/viewhistory">History</a>
   <a href="<?php echo base_url(); ?>index.php/Welcome/viewpetugas">Laporan</a>
 </div>
 
